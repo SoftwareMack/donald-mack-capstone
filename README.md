@@ -12,7 +12,7 @@ Why is your app needed? Background information around any pain points or other r
 
 ### User Profile
 
-Who will use your app? How will they use it? Any special considerations that your app must take into account. it'll be aimed at those who want automatic stock picks preferably swing trades.
+Who will use your app? How will they use it? Any special considerations that your app must take into account. it'll be aimed at those who want automatic stock picks preferably swing trades.And those that don't have time to do the math.
 
 ### Features
 
@@ -23,7 +23,22 @@ List the functionality that your app will include. These can be written as user 
 
 ### Tech Stack
 
-List technologies that will be used in your app, including any libraries to save time or provide more functionality. Be sure to research any potential limitations. I will use React, Html, Javascript, expres.js, sass, possibly an outside api possibly a database for storing user data and maybe historical data  . ja
+List technologies that will be used in your app, including any libraries to save time or provide more functionality. Be sure to research any potential limitations.
+React
+React Router
+chart.js or D3.js
+Axios
+Node
+Sass
+
+backend 
+ express
+dotenv
+cors
+nodemon
+outside api
+maybe a database Mysql 
+
 
 ### APIs
 
@@ -34,6 +49,34 @@ List any external sources of data that will be used in your app. a financial api
 List the pages of your app with brief descriptions. You can show this visually, or write it out. there will be a dashboard page that has link for the rest of the pages.
 
  there will be a trading controls page that has the technical anaylisis selection selection. A stocklist page that displays the custum watchlist. A signal indicator page shows the buy sell hold signals.
+ Login: Component for user login with a 4-digit login system.
+Navigation:
+
+Navbar: Navigation bar for navigating between different pages.
+Sidebar: Optional sidebar for additional navigation.
+Pages:
+
+Home: Landing page or dashboard.
+Stocks: Page for displaying real-time stock data and charts.
+Options: Page for displaying real-time options data and charts.
+Charts:
+
+StockChart: Component for displaying real-time stock charts.
+OptionsChart: Component for displaying real-time options charts.
+Signals:
+
+SignalsPanel: Panel displaying buy/sell signals based on specified conditions.
+User Interaction:
+
+StockSelector: Dropdown or input for selecting specific stocks.
+OptionSelector: Dropdown or input for selecting specific options.
+Footer:
+
+Footer: Footer section for additional information or links.
+Loading/Spinner:
+
+LoadingSpinner: Component for displaying loading spinner while fetching data.
+ Api
 
 ### Mockups
 
@@ -47,16 +90,18 @@ the data for the graphs will come an values from a api and displayed on the char
 
 ### Endpoints
 
-List endpoints that your server will implement, including HTTP methods, parameters, and example responses.
+List endpoints that your server will implement, including HTTP methods, parameters, and example responses. 
 
 
 GET /posts: Retrieve a list of s&p 500 stocks or option .
 GET /posts/{id}: Retrieve details of a specific stock or option .
 POST /posts: Create a new watchlist post.
 PUT /posts/{id}: Update an existing watchlist post with the given ID
+
 ### Auth
 
 Does your project include any login or user profile functionality? If so, describe how authentication/authorization will be implemented.
+
 
 yes. but authentication/authorization hasn't been decided yet.
 ## Roadmap
@@ -64,6 +109,6 @@ yes. but authentication/authorization hasn't been decided yet.
 Scope your project as a sprint. Break down the tasks that will need to be completed and map out timeframes for implementation. Think about what you can reasonably complete before the due date. The more detail you provide, the easier it will be to build. I plan 2 sprints for this project and a 2 day test and debugging period for it. Sprint one day one getting all the images and assets and libraries needed to start.the remainder of sprint one include would include building the front end out. sprint two will consist of the back end and linking and passing info to the from and back. final 2 days to test and debug.
 
 ## Nice-to-haves
-upload page with the a spinner.. settings page and portfolio page. 
+upload page with the a spinner.. settings page and portfolio page. the backend is something that i'll start on if I have the time but i plan on one day testing the waters and launching the complete app.
 
 Your project will be marked based on what you committed to in the above document. Under nice-to-haves, you can list any additional features you may complete if you have extra time, or after finishing.
