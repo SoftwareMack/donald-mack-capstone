@@ -70,10 +70,9 @@ User Interaction:
 
 StockSelector: Dropdown or input for selecting specific stocks.
 OptionSelector: Dropdown or input for selecting specific options.
-Footer:
 
-Footer: Footer section for additional information or links.
-Loading/Spinner:
+
+
 
 LoadingSpinner: Component for displaying loading spinner while fetching data.
  Api
@@ -91,6 +90,24 @@ the data for the graphs will come an values from a api and displayed on the char
 ### Endpoints
 
 List endpoints that your server will implement, including HTTP methods, parameters, and example responses. 
+authRoutes.js: Define routes for user authentication (login, logout, etc.).
+
+stockRoutes.js: Define routes for fetching stock-related data.
+
+optionRoutes.js: Define routes for fetching options-related data.
+
+Controllers (authController.js, stockController.js, optionController.js): Handle the logic for various operations related to authentication and fetching data.
+
+Middleware (authMiddleware.js): Implement middleware for user authentication.
+
+db.js: Set up the connection to your chosen database (MongoDB in this case).
+
+models/: Define database models for user data, stock data, and options data.
+
+externalAPI.js: Wrapper for making requests to external APIs (e.g., Alpha Vantage).
+
+.env: Store sensitive information like database connection strings and API keys.
+
 
 
 GET /posts: Retrieve a list of s&p 500 stocks or option .
