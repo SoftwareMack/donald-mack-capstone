@@ -31,18 +31,10 @@ Axios
 Node
 Sass
 
-backend 
- express
-dotenv
-cors
-nodemon
-outside api
-maybe a database Mysql 
-
 
 ### APIs
-
-List any external sources of data that will be used in your app. a financial api or a stock api ex. yahoo,alpha stocks, chartsia.
+finance api
+alpha stocks
 
 ### Sitemap
 
@@ -53,7 +45,6 @@ List the pages of your app with brief descriptions. You can show this visually, 
 Navigation:
 
 Navbar: Navigation bar for navigating between different pages.
-Sidebar: Optional sidebar for additional navigation.
 Pages:
 
 Home: Landing page or dashboard.
@@ -127,5 +118,10 @@ Scope your project as a sprint. Break down the tasks that will need to be comple
 
 ## Nice-to-haves
 upload page with the a spinner.. settings page and portfolio page. the backend is something that i'll start on if I have the time but i plan on one day testing the waters and launching the complete app.
+backend 
+ express
+dotenv
+cors
+nodemon
 
 Your project will be marked based on what you committed to in the above document. Under nice-to-haves, you can list any additional features you may complete if you have extra time, or after finishing.
