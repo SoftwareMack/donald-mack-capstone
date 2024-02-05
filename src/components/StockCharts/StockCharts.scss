@@ -1,0 +1,63 @@
+// StockCharts.scss
+
+.stock-charts-container {
+    max-width: 80vw;
+    margin: 0 auto;
+    padding: 4vw;
+    background-color: #ffffff;
+    border-radius: 4vw;
+    box-shadow: 0 0 2vw rgba(0, 0, 0, 0.1);
+
+    .apexcharts-title {
+      color: #333333;
+      font-size: 3vw;
+      text-align: left;
+      margin-bottom: 2vw;
+    }
+
+    .apexcharts-tooltip {
+      background-color: rgba(255, 255, 255, 0.9);
+      border: 1px solid #cccccc;
+      border-radius: 4px;
+      padding: 0.5vw;
+      font-size: 1.2vw;
+    }
+
+    // Responsive Styles
+    @media only screen and (max-width: 767px) {
+      padding: 6vw;
+
+      .apexcharts-title {
+        font-size: 4vw;
+      }
+
+      .apexcharts-tooltip {
+        font-size: 1.5vw;
+      }
+    }
+
+    @media only screen and (min-width: 768px) and (max-width: 1279px) {
+      padding: 3.5vw;
+
+      .apexcharts-title {
+        font-size: 3.5vw;
+      }
+
+      .apexcharts-tooltip {
+        font-size: 1.8vw;
+      }
+    }
+
+    @media only screen and (min-width: 1280px) {
+      padding: 2vw;
+
+      .apexcharts-title {
+        font-size: 2.5vw;
+      }
+
+      .apexcharts-tooltip {
+        font-size: 1.4vw;
+      }
+    }
+  }
+

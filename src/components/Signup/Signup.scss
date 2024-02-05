@@ -1,0 +1,109 @@
+// Signup.scss
+
+.signup-container {
+    max-width: 80vw;
+    margin: 0 auto;
+    background-color: #ffffff;
+    padding: 4vw;
+    border-radius: 4vw;
+    box-shadow: 0 0 2vw rgba(0, 0, 0, 0.1);
+
+    .signup-title {
+      color: #333333;
+      font-size: 3vw;
+      text-align: center;
+      margin-bottom: 2vw;
+    }
+
+    .signup-form {
+      display: flex;
+      flex-direction: column;
+
+      label {
+        font-size: 1.2vw;
+        margin-bottom: 0.6vw;
+        color: #555555;
+      }
+
+      input {
+        padding: 1vw;
+        margin-bottom: 1.2vw;
+        border: 0.1vw solid #cccccc;
+        border-radius: 1vw;
+        font-size: 1.2vw;
+      }
+
+      .signup-button {
+        background-color: #28a745;
+        color: #ffffff;
+        padding: 1.2vw;
+        border: none;
+        border-radius: 1vw;
+        font-size: 1.4vw;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+
+        &:hover {
+          background-color: #218838;
+        }
+      }
+    }
+
+    // Responsive Styles
+    @media only screen and (max-width: 767px) {
+      padding: 6vw;
+
+      .signup-title {
+        font-size: 4vw;
+      }
+
+      .signup-form {
+        input {
+          font-size: 2vw;
+        }
+
+        .signup-button {
+          font-size: 2vw;
+          padding: 1.5vw;
+        }
+      }
+    }
+
+    @media only screen and (min-width: 768px) and (max-width: 1279px) {
+      padding: 3.5vw;
+
+      .signup-title {
+        font-size: 3.5vw;
+      }
+
+      .signup-form {
+        input {
+          font-size: 1.5vw;
+        }
+
+        .signup-button {
+          font-size: 1.8vw;
+          padding: 1.8vw;
+        }
+      }
+    }
+
+    @media only screen and (min-width: 1280px) {
+      padding: 2vw;
+
+      .signup-title {
+        font-size: 2.5vw;
+      }
+
+      .signup-form {
+        input {
+          font-size: 1.2vw;
+        }
+
+        .signup-button {
+          font-size: 1.4vw;
+          padding: 1.4vw;
+        }
+      }
+    }
+  }
