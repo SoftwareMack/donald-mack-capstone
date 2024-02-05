@@ -5,7 +5,6 @@ import StockChart from '../src/components/StockChart/StockChart';
 import StockList from '../src/components/StockList/StockList';
 import SignalIndicator from './components/SignalIndicator/SignalIndicator';
 import TradingControls from './components/TradingControls/TradingControls';
-import PortfolioComponent from './components/PortfolioComponent/PortfolioComponent';
 import NotificationComponent from './components/NotificationComponent/NotificationComponent';
 import PaperTradingPage from './components/tempPapertradingpage/PaperTradingPage';
 import PortfolioSummaryComponent from './components/tempPortfolioSummaryComponent/PortfolioSummaryComponent';
@@ -32,7 +31,6 @@ const App = () => {
         <Route path="/stock-list" element={<StockList />} />
         <Route path="/signal-indicator" element={<SignalIndicator />} />
         <Route path="/trading-controls" element={<TradingControls />} />
-        <Route path="/portfolio" element={<ErrorBoundary><PortfolioComponent /></ErrorBoundary>} />
         <Route path="/notifications" element={<NotificationComponent />} />
         <Route path="/paper-trading" element={<PaperTradingPage />} />
         <Route path="/portfolio-summary" element={<PortfolioSummaryComponent />} />
