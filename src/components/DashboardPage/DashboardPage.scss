@@ -1,0 +1,84 @@
+.dashboard {
+  background-image: url('../../assets/backgroundImages/24.jpg');
+  background-size: cover;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  &__header {
+    font-size: 24px;
+    margin: 20px 0;
+    color: wheat;
+  }
+
+  &__links {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+
+    &__link,
+    &__settings-button {
+      width: 150px;
+      height: 150px;
+      margin: 10px;
+      cursor: pointer;
+      transition: opacity 0.3s;
+
+      &:hover {
+        opacity: 0.8;
+      }
+    }
+
+    &__link {
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+
+      &--blinking {
+        animation: blink 1s infinite;
+      }
+    }
+
+    &__settings-button {
+      padding: 10px;
+      background-color: #3498db;
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+      font-size: 16px;
+
+      &:hover {
+        background-color: #2980b9;
+      }
+    }
+  }
+
+  @media (min-width: 768px) and (max-width: 1279px) {
+    &__links {
+      &__link,
+      &__settings-button {
+        width: 120px;
+        height: 120px;
+      }
+    }
+  }
+
+  @media (max-width: 767px) {
+    &__links {
+      &__link,
+      &__settings-button {
+        width: 100px;
+        height: 100px;
+      }
+    }
+  }
+}
+
+@keyframes blink {
+  50% {
+    opacity: 0;
+  }
+}
