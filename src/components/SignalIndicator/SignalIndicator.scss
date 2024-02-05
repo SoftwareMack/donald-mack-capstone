@@ -1,0 +1,126 @@
+/* SignalIndicator.scss */
+
+body {
+  background-image: url('../../assets/backgroundImages/23.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  margin: 0;
+  font-family: Arial, sans-serif;
+}
+
+
+
+.signal-indicator {
+  text-align: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  height: 100vh;
+
+  &__header {
+    margin-bottom: 20px;
+    font-size: 24px;
+    font-weight: bold;
+    color:red; 
+  }
+
+  &__items {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    color: whitesmoke;
+    font-size: 24px;
+    font-weight: bold;
+
+    &__item {
+      margin-bottom: 20px;
+      font-size: 18px;
+
+      &__buttons {
+
+          margin-right: 10px;
+          padding: 10px;
+          font-size: 16px;
+          cursor: pointer;
+          transition: background-color 0.3s ease;
+
+
+
+
+
+        }
+      }
+    }
+  }
+  .button{
+  &__back-to-dashboard-button {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 10px 20px;
+    font-size: 16px;
+    text-align: center;
+    text-decoration: none;
+    color: #fff;
+    background-color: #2196f3;
+    border: 1px solid #2196f3;
+    border-radius: 5px;
+    cursor: pointer;
+
+    &:hover {
+      text-decoration: underline;
+      background-color: #f0f0f0;
+    }
+  }
+
+  &__no-items-message {
+    color: #333;
+  }
+
+
+  }
+
+  @keyframes blink {
+    0% {
+      color: red;
+
+    }
+
+      100% {
+      color: green;
+      }
+  }
+
+  @keyframes blink-green {
+    0% {
+      background-color: #4caf50;
+    }
+  }
+
+  @keyframes blink-red {
+    50% {
+      background-color: #f44336;
+    }
+  }
+  .buy .blinking-green {
+    animation: blink-green 1s infinite;
+  }
+
+  .sell .blinking-red {
+    animation: blink-red 1s infinite;
+  }
+
+  .blinking {
+    animation: blink 1s ease-in infinite;
+    font-size: 24px;
+
+  }
+.chart-widget__header {
+  color: red;
+  text-align: center;
+}
+.chart-widget__dashboard-link {
+    color: red;
+    font-size: larger;
+    margin-left: 41rem;
+}
