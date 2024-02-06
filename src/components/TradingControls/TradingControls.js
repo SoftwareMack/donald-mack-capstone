@@ -1,9 +1,9 @@
-// TradingControls.js
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import './TradingControls.scss'; 
+import './TradingControls.scss';
 
 const TradingControls = ({ onBackToDashboard }) => {
+  const [selectedStock, setSelectedStock] = useState(null);
   const [strategyParameters, setStrategyParameters] = useState({
     shortEmaPeriod: 9,
     longEmaPeriod: 21,
@@ -13,6 +13,7 @@ const TradingControls = ({ onBackToDashboard }) => {
   const [priceData, setPriceData] = useState([]);
   const [volumeData, setVolumeData] = useState([]);
   const [generatedSignals, setGeneratedSignals] = useState([]);
+  const [watchlist, setWatchlist] = useState([]);
 
   const handleParameterChange = (parameter, value) => {
     setStrategyParameters((prevParameters) => ({
@@ -21,19 +22,53 @@ const TradingControls = ({ onBackToDashboard }) => {
     }));
   };
 
-  const fetchHistoricalData = () => {
-    const historicalPrices = [100, 105, 98, 110, 120, 115, 130, 125, 140, 135];
-    const historicalVolumes = [500000, 550000, 480000, 600000, 700000, 650000, 800000, 750000, 900000, 850000];
+  useEffect(() => {
+    const fetchWatchlistData = async () => {
+      try {
+        const response = await fetch('http://localhost:8000/api/watchlist');
+        if (!response.ok) {
+          throw new Error(`Failed to fetch watchlist data. Status: ${response.status}`);
+        }
+        const watchlistData = await response.json();
+        setWatchlist(watchlistData);
+      } catch (error) {
+        console.error('Error fetching watchlist data:', error);
+      }
+    };
 
-    setPriceData(historicalPrices);
-    setVolumeData(historicalVolumes);
+    fetchWatchlistData();
+  }, []);
+
+  const fetchHistoricalData = async () => {
+    if (selectedStock) {
+      try {
+
+        const apiKey = '3BLPG03TNFMQYCQ2';
+        const symbol = selectedStock;
+
+        const priceResponse = await fetch(`https://www.alphavantage.co/query?function=TIME_SERIES_DAILY&symbol=${symbol}&apikey=${apiKey}`);
+        const priceData = await priceResponse.json();
+
+        const historicalPrices = Object.values(priceData['Time Series (Daily)']).map((entry) => parseFloat(entry['4. close']));
+
+        const volumeResponse = await fetch(`https://www.alphavantage.co/query?function=TIME_SERIES_DAILY&symbol=${symbol}&apikey=${apiKey}`);
+        const volumeData = await volumeResponse.json();
+
+        const historicalVolumes = Object.values(volumeData['Time Series (Daily)']).map((entry) => parseFloat(entry['5. volume']));
+
+        setPriceData(historicalPrices);
+        setVolumeData(historicalVolumes);
+      } catch (error) {
+        console.error('Error fetching historical data:', error);
+      }
+    }
   };
 
   useEffect(() => {
     fetchHistoricalData();
     const intervalId = setInterval(fetchHistoricalData, 5000);
     return () => clearInterval(intervalId);
-  }, []);
+  }, [selectedStock]);
 
   const calculateEMA = (data, period) => {
     const multiplier = 2 / (period + 1);
@@ -74,6 +109,20 @@ const TradingControls = ({ onBackToDashboard }) => {
           Dashboard
         </Link>
       </header>
+
+      <div className="trading-controls__stock-selection">
+        <label>
+          Select Stock from Watchlist:
+          <select onChange={(e) => setSelectedStock(e.target.value)} value={selectedStock || ''}>
+            <option value="" disabled>Select a stock</option>
+            {watchlist?.map((stock) => (
+              <option key={stock.symbol} value={stock.symbol}>
+                {stock.name}
+              </option>
+            ))}
+          </select>
+        </label>
+      </div>
 
       <div className="trading-controls__parameters">
         <label>
