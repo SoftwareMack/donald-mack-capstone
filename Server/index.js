@@ -23,7 +23,7 @@ const watchlistSchema = new mongoose.Schema({
 
 const Watchlist = mongoose.model('Watchlist', watchlistSchema);
 
-const apiKey = '3BLPG03TNFMQYCQ2';
+const apiKey = 'ALPHA_VANTAGE_API_KEY';
 
 const fetchStockData = async (symbol) => {
   const interval = '1min';
