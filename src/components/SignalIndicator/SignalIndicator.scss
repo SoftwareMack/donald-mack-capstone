@@ -1,7 +1,7 @@
 /* SignalIndicator.scss */
 
 body {
-  background-image: url('../../assets/backgroundImages/23.jpg');
+  //background-image: url('../../assets/backgroundImages/23.jpg');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -22,14 +22,14 @@ body {
     margin-bottom: 20px;
     font-size: 24px;
     font-weight: bold;
-    color:red; 
+    color:red;
   }
 
   &__items {
     list-style: none;
     padding: 0;
     margin: 0;
-    color: whitesmoke;
+    color: black;
     font-size: 24px;
     font-weight: bold;
 

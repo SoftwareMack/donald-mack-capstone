@@ -1,7 +1,7 @@
 // NotificationComponent.scss
 
 .stock-notification {
-  background-image: url('../../assets/backgroundImages/27.jpg');
+  //background-image: url('../../assets/backgroundImages/27.jpg');
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center center;
@@ -73,5 +73,58 @@
         background-color: #45a049;
       }
     }
+  }
+}
+.notification-footer {
+  background-color: #f4f4f4;
+  padding: 20px;
+  text-align: center;
+  margin-top: 20rem;
+  color: black;
+
+  p {
+    margin-bottom: 10px;
+  }
+
+  .footer__social {
+    margin-top: 10px;
+    display: inline-block;
+
+    a {
+      display: inline-block;
+      transition: transform 0.3s;
+      margin-right: 10px;
+
+      &:last-child {
+        margin-right: 0;
+      }
+
+      &:hover {
+        transform: scale(1.2);
+      }
+
+      img {
+        width: 30px;
+      }
+    }
+
+    &::before {
+      content: '';
+      display: inline-block;
+      width: 30px;
+      height: 30px;
+      background-repeat: no-repeat;
+      background-size: contain;
+      background-position: center;
+      margin-right: 10px; // Add margin to create space between images
+    }
+  }
+
+  .footer__social--linkedin::before {
+    background-image: url('/assets/backgroundImages/linkedin.svg');
+  }
+
+  .footer__social--github::before {
+    background-image: url('/assets/backgroundImages/github.svg');
   }
 }

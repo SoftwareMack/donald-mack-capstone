@@ -1,6 +1,4 @@
 
-// StockNotification.js
-
 import React, { useState, useEffect } from 'react';
 import './NotificationComponent.scss';
 
@@ -31,7 +29,7 @@ const StockNotification = () => {
       })
       .catch((error) => console.error('Error fetching stock news:', error))
       .finally(() => setLoading(false));
-  }, []); 
+  }, []);
 
   return (
     <div className="stock-notification">
@@ -52,6 +50,12 @@ const StockNotification = () => {
           ))}
         </ul>
       )}
+      
+<footer className="notification-footer">
+  <p>Copyright 2024 | Created by Donald Mack</p>
+  <a href="https://www.linkedin.com/in/softwaremack/" target="_blank" rel="noopener noreferrer" className="footer__social footer__social--linkedin"></a>
+  <a href="https://github.com/SoftwareMack" target="_blank" rel="noopener noreferrer" className="footer__social footer__social--github"></a>
+</footer>
     </div>
   );
 };

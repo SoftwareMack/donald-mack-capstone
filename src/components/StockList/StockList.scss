@@ -1,5 +1,5 @@
 body {
-  background-image: url('../../assets/backgroundImages/25.jpg');
+  //background-image: url('../../assets/backgroundImages/25.jpg');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -68,6 +68,7 @@ body {
       cursor: pointer;
       transition: background-color 0.3s;
       margin-left: 20px;
+      margin-top: 1.3rem;
 
       @media (max-width: 767px) {
         margin-left: 10rem;
@@ -205,5 +206,90 @@ body {
 .watchlist__view-chart-button {
   @media (max-width: 767px) {
     margin-top: -1.3rem;
+  }
+}
+.watchlist__label1 {
+  margin-right: 5rem;
+}
+.watchlist__label2 {
+  margin-right: 2rem;
+}
+.watchlist__label4 {
+  margin-left: 2rem;
+}
+.watchlist__label5 {
+  margin-left: 2rem;
+}
+
+.watchlist__price1 {
+  margin-left: 5rem;
+}
+.watchlist__price2 {
+  margin-left:1rem ;
+}
+.watchlist__price3 {
+  margin-left: 2.5rem;
+}
+.watchlist__footer {
+  background-color: #f4f4f4;
+  padding: 20px;
+  text-align: center;
+  margin-top: 22rem;
+  color: black;
+
+  p {
+    margin-bottom: 10px;
+  }
+
+  .footer__social {
+    margin-top: 10px;
+    display: inline-block;
+
+    a {
+      display: inline-block;
+      transition: transform 0.3s;
+      margin-right: 10px;
+
+      &:last-child {
+        margin-right: 0;
+      }
+
+      &:hover {
+        transform: scale(1.2);
+      }
+
+      img {
+        width: 30px;
+      }
+    }
+
+    &::before {
+      content: '';
+      display: inline-block;
+      width: 30px;
+      height: 30px;
+      background-repeat: no-repeat;
+      background-size: contain;
+      background-position: center;
+      margin-right: 10px;
+    }
+  }
+
+  .footer__social--linkedin::before {
+    background-image: url('/assets/backgroundImages/linkedin.svg');
+  }
+
+  .footer__social--github::before {
+    background-image: url('/assets/backgroundImages/github.svg');
+  }
+}
+
+@media (max-width: 767px){
+  .dashboard__footer {
+  background-color: #f4f4f4;
+  padding: 20px;
+  text-align: center;
+  margin-top: 10rem;
+  color: black;
   }
 }
